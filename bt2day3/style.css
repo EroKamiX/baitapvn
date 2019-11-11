@@ -1,0 +1,18 @@
+@font-face {
+	src: url('fonts/Georgia.tff');
+	font-family: 'Georgia';
+	src: url('fonts/Georgiai.tff');
+	font-family: 'Georgiai';
+	src: url('fonts/QlassikBold_TB.ttf');
+	font-family: 'QlassikBold_TB';
+}
+.container {
+	background: #fefae8 ;
+}
+.header-ul {
+	background: #8cb13c;
+	padding: 5px;
+}
+.header-ul ul li {
+	display: inline;
+}

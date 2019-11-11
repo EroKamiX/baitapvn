@@ -1,0 +1,33 @@
+/*.dropdown-menu {
+	display: block;
+}
+*/
+.bt2 .container {
+	max-width: 500px;
+}
+.bt2 .header {
+	text-align: center;
+	background: #008eff;
+	color: #fff;
+	padding: 10px 0px;
+}
+.click {
+	color: #fff;
+	text-decoration: underline;
+}
+.main {
+	background: #fafaff;
+	padding: 50px;
+}
+.bt2 .login:after {
+	content: '';
+	border: #51b2ff solid 2px;
+	display: block;
+	width: 40px;
+	margin: 5px auto;
+}
+@media(max-width: 767px){
+	.container {
+		padding: 0;
+	}
+}
