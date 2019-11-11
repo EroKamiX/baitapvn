@@ -81,19 +81,28 @@ body {
 	height: 100%;
 }
 .month-date {
-	background:#fff;
 	color: #2f2f2f;
 	text-align: center;
-	padding: 5px;
 	vertical-align: middle;
-	border-radius: 10px;
-
-	display: inline-block;
 }
 .table-cell {
 	display: table-cell;
 }
-
+.month, .day {
+	background:#fff;
+	display: block;
+}
+.month {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	padding: 5px 5px 0 5px;
+}
+.day {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding: 0px 5px 5px 5px;
+	font-weight: bold;
+}
 .post-description {
 	padding-left: 15px;
 }
