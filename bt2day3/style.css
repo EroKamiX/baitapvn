@@ -56,14 +56,39 @@ body {
 	padding: 5px 10px;
 	background-image: url(image/bt2.png);
     background-repeat: no-repeat;
-    background-size: 100%;
-    height: 219px;
+    background-size: cover;
+    height: 213px;
+}
+.main-top-right {
+	text-align: center;
+	padding: 0 25%;
+}
+.top-content {
+	font-size: 26px;
+	color: #fefae8;
+	font-family: 'QlassikBold_TB'; 
+}
+.bottom-content {
+	color: #f0c786;
+	font-size: 18px;
+	font-family: 'Georgia';
+}
+.main-middle {
+	padding: 2% 0;
+}
+.main-middle-content {
+	border: #543e31 solid 1px;
+	border-left: none;
+	border-right: none;
 }
 .img {
 	padding: 10px;
 }
 .img1, .img2, .img3 {
 	position: absolute;
+}
+.img1 {
+
 }
 
 .img2 {
