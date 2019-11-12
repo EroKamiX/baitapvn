@@ -6,13 +6,69 @@
 	src: url('fonts/QlassikBold_TB.ttf');
 	font-family: 'QlassikBold_TB';
 }
+body {
+	background-repeat-y: no-repeat;
+}
+.row {
+	display: flex;
+}
+.col-md-6 {
+	float:left;
+	width: 50%;
+}
 .container {
 	background: #fefae8 ;
+	margin: 0 5%;
+}
+.common {
+	padding: 0 5%;
 }
 .header-ul {
 	background: #8cb13c;
-	padding: 5px;
+	
 }
 .header-ul ul li {
 	display: inline;
+	padding: 5px 5px;
+	border-right: #908375 solid 1px;
+}
+.header-ul ul li a {
+	color: #fff;
+	text-decoration: none;
+	padding: 0 8%;
+}
+.idk {
+	color: #908375;
+}
+.contract {
+	border-right: none;
+}
+.quote {
+	text-decoration: none;
+    border-radius: 5px;
+    background: #da962b;
+    color: #fff;
+    padding: 5px;
+    float: right;
+}
+.main-top {
+	border: #e3d8c5 solid 5px;
+	padding: 5px 10px;
+	background-image: url(image/bt2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 219px;
+}
+.img {
+	padding: 10px;
+}
+.img1, .img2, .img3 {
+	position: absolute;
+}
+
+.img2 {
+	margin-left: 50px;
+}
+.img3 {
+	margin-left: 100px;
 }
