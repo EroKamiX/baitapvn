@@ -15,6 +15,7 @@ body {
 .col-md-6 {
 	float:left;
 	width: 50%;
+	padding-right: 3%;
 }
 .container {
 	background: #fefae8 ;
@@ -35,7 +36,6 @@ body {
 .header-ul ul li a {
 	color: #fff;
 	text-decoration: none;
-	padding: 0 8%;
 }
 .idk {
 	color: #908375;
@@ -61,12 +61,12 @@ body {
 }
 .main-top-right {
 	text-align: center;
-	padding: 0 25%;
+	padding: 0 20%;
 }
 .top-content {
 	font-size: 26px;
 	color: #fefae8;
-	font-family: 'QlassikBold_TB'; 
+	font-family: 'Georgia';
 }
 .bottom-content {
 	color: #f0c786;
@@ -80,6 +80,8 @@ body {
 	border: #543e31 solid 1px;
 	border-left: none;
 	border-right: none;
+	padding-top: 5px;
+	padding-bottom: 13px;
 }
 .img {
 	padding: 10px;
@@ -96,4 +98,11 @@ body {
 }
 .img3 {
 	margin-left: 100px;
+}
+.content-bottom {
+	color: #83a737;
+}
+.post-des {
+	color: #cf8b1f;
+	margin: -10px 0;
 }
