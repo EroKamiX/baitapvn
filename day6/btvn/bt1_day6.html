@@ -11,18 +11,20 @@
 	Tuổi
 	<input type="number" value="" id="age" placeholder="Nhập tuổi của bạn" ><br>
 	<input type="submit" name="" value="Hiển thị thông tin">
-	<div id="result" style="color: green">
+	<div id="result" style="color: green"></div>
 	<script type="text/javascript">
 		function handleSubmit() {
-		var ojb_name = document.getElementById('name');
-		var name = ojb_name.value;
+		var obj_name = document.getElementById('name');
+		var name = obj_name.value;
 		var obj_age = document.getElementById('age');
 		var age = obj_age.value;
-		var obj_result = document.getElementByid('result');
+		var obj_result = document.getElementById('result');
 		var string = "Tên vừa Nhập: " + name +"<br>";
-			string = "Tuổi vừa nhập: " + age +"<br>";
+			string = string+ "Tuổi vừa nhập: " + age +"<br>";
 		obj_result.innerHTML = string;
+		alert('tên tôi là '+name + '\n' +'tuổi của tôi' + age);
 		return false;
+
 	}
 	</script>
 </form>

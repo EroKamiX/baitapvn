@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Demo day7</title>
+</head>
+<body>
+	<!-- <script type="text/javascript">
+		// toán tử
+		// 3+5=1
+		var no1=3;
+		var no2=2;
+		var cal1 = no1 + no2;
+		var cal2 = no1 - no2;
+		var cal3 = no1 * no2;
+		var cal4 = no2 / no1;
+		var cal5 = no2 %  no1;
+		no2++;
+		no1--;
+		--no1;
+		++no2;
+		document.write("cal1 =" + cal1);
+		document.write("<br/>");
+		document.write("cal2 =" + cal2);
+		document.write("<br/>");
+		document.write("cal3 =" + cal3);
+		document.write("<br/>");
+		document.write("cal4 =" + cal4);
+		document.write("<br/>");
+
+		var a =5;
+		var sum= a++ - a--;
+		document.write(sum+"<br>");
+		var x=5;
+		var sum2= x++ * ++x +2*--x;
+		document.write(sum2+"<br>");
+		var y= -2;
+		var sum3= y++ * --y + (y-- % 2) / y--;
+		//        -2  * -2  + (-2 % 2) / -3;
+		document.write(sum3+"<br>");
+		// 2 - sp sánh
+		var a=5;
+		var b =6;
+		var operator1 = a ==b;
+		var operator2 = a!=b;
+		var operator3 = a>b;
+		var operator4 = a<=b;
+		var operator5 = a<b;
+		var operator6 = a>=b;
+		document.write("operator1" + operator1);
+		document.write("<br/>");
+		document.write("operator2" + operator2);
+		document.write("<br/>");
+		document.write("operator3 =" + operator3);
+		document.write("<br/>");
+		document.write("operator4" + operator4);
+		document.write("<br/>");
+		document.write("operator5" + operator5);
+		document.write("<br/>");
+		document.write("operator6 =" + operator6);
+		document.write("<br/>");
+		// 3 toán tử kêt hợp
+		var a =5;
+		var b= 6;
+		var logic1 =(a>b)&&(b==5);
+		var logic2 =(a>b)||(b==5);
+		// toán tử not
+		var logic3= !(a==3);
+		var x=4;
+		var y=5;
+		var  resul = (x%2==0) || (y>0);
+		// toán tử gán
+		var x=5;
+		var y=x;
+		var z=x;
+		 z+=x;
+		 z-=x;
+		 z*=x;
+		 z/=x;
+		 z%=x;
+		// 5 toán tử điều kiện
+		// ?:
+		var x =5;
+		 var result = x > 0? "x >0" : "X<=0";
+		 document.write(result);
+		 // câu lệnh  biểu thực if else 
+		 // 1 if chỉ có 1 trường hợp
+		 var x =5;
+		 var y =5;
+		 if (x > 0) {
+		 	document.write("5>0"+ "<br>");
+		 }
+		 // if else có 2 trường hợp if else 
+		 if (y%2 ==0){
+		 	document.write("y chia hết chho 2");
+		 }
+		 else {
+		 	document.write("y ko chia hết cho 2");
+		 }
+
+		 // 3 if elseif else có lớn hơn 2 trường hợp xảy ra
+		 var point= 1.5;
+		 if (point<10 && point>=8) {
+		 	document.write("điểm giỏi");
+		 }
+		 else if (point>=6.5) {
+		 	document.write("điểm khá");
+		 }
+		 else if (point>=5) {
+		 	document.write("điểm tb");
+		 }
+		 else if (point>=3.5) {
+		 	document.write("điểm yếu");
+		 }
+		 else {
+		 	document.write("chịu");
+		 }
+		 // switch case
+		 // chỉ so sánh kiểu dữ liệu nguyên thủy là number or string, boolean, và bắt buộc so sánh bằng
+		 // có thẻ thay thế cho biểu thức if else if
+		 var day =2 ;
+		 switch(day) {
+		 	case 2 : 
+		 	document.write("thứ 2");
+		 	break;
+		 	case 3 :
+		 	document.write("thứ 3");
+		 	break;
+		 	case 4:
+		 	document.write("thứ 4");
+		 	break;
+		 default :
+		 	document.write("không phải các ngày trên");
+		 }
+		 if (day==2) {
+		 	document.write("thứ 2");
+		 }
+		 else if (day==2){
+		 	document.write("thứ 3");
+		 }
+		 else if (day==3){
+		 	document.write("thứ 4");
+		 }
+		 else{
+		 	document.write("không phải các ngày trên");
+		 }
+		 // vòng lặp
+		 // 1 - vòng lặp for khi bạn biết trước số lần lặp
+		 for(var i=1; i<=100;i++) {
+		 	document.write(i+ "-");
+		 
+		 }
+		 // vòng lặp while
+		 var i =10;
+		 while(i<20) {
+		 	document.write(i);
+		 	i+=2;
+		 }
+		 // do while 
+		 var j=3;
+		 do {
+		 	document.write("cố in ra giá trị này xem có được hay ko");
+		 }
+		 while(j<0);
+		 var x=2;
+		 do {
+		 	document.write(x);
+		 	x--;
+		 }
+		 while (x >0);
+		 //break countiue
+		 var i=10;
+		 for (i=1; i<=10; i++){
+		 	document.write(i+ "-");
+		 	if (i==6){
+		 		break;
+		 	}
+		 }
+		 // continue
+		 var j =10;
+		 for (j=1; j<=10;j++){
+		 	if (j==5){
+		 		continue;
+		 	}
+		 	document.write(j+ "-");
+		 }
+		</script> -->
+		<form action="" method="" id="form-add">
+			<input type="text" id="no1" value="" placeholder="nhập số thứ nhất"/>
+			<input type="text" id="no2" value="" placeholder="nhập số thứ hai"/>
+			<input type="submit" id="btn-add" value="cộng 2 số">
+		</form>
+		<div id="error" style="color: red"></div>
+		<div id="result" style="color: green"></div>
+		<script type="text/javascript">
+			//sử dụng hàm addEventListener để gắn sự kiện
+			var form_obj = document.getElementById('form-add');
+			function add() {
+				
+				var error = '';
+				var result = '';
+				var no_obj_1= document.getElementById('no1');
+				var no1= no_obj_1.value;
+				var no_obj_2= document.getElementById('no2');
+				var no2= no_obj_2.value;
+				if (no1 =='' || no2=='') {
+					error=' Ko đuc để rỗng'
+				}
+				else if (isNaN(no1)== true || isNaN(no2)== true){
+					error="bắt buộc là số";
+
+				}
+				else{
+					var result= no1 +no2;
+				}
+				error_obj = document.getElementById('error');
+				error_obj.innerHTML = error;
+				result.obj = document.getElementById('result')
+				result.obj.innerHTML = result;
+			}
+			form_obj.addEventListener('submit', function(event){
+				event.preventDefault();
+				add();
+			});
+
+		</script>
+</body>
+</html>
