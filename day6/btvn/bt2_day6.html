@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>bai tap 2</title>
+<link rel="stylesheet" type="text/css" href="../../bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="bt2_day6.css"/>
+</head>
+<body>
+	<h1>JavaScript Onsubmit Event Exmample</h1>
+	<form action="" method="post" id="form">
+  <div class="form-group">
+    <label for="exampleInputName">Name :</label>
+	 <input type="text" class="form-control" id="exampleInputName" value="" placeholder="Enter Name">
+</div>
+  <div class="form-group">
+	  <label for="exampleInputEmail">Email :</label>
+    <input type="email" class="form-control" id="exampleInputEmail" value="" placeholder="Enter Email">
+  </div>
+	  <div class="form-group">
+		<label for="exampleInputCobntact">Contact No :</label>
+    <input type="text" class="form-control" id="exampleInputContact" value="" placeholder="Enter Contact No">
+  </div>
+  <button type="submit" class="btn btn-warning">Submit</button>
+	</form>
+	<div id="result"></div>
+<script type="text/javascript">
+		var form_obj = document.getElementById('form');
+		function handleSubmit() {
+			var name_obj =document.getElementById('exampleInputName');
+			var name = name_obj.value;
+			var email_obj =document.getElementById('exampleInputEmail');
+			var email = email_obj.value;
+			var contact_obj =document.getElementById('exampleInputContact');
+			var contact = contact_obj.value;
+			
+			var show = 'name : ' + name;
+			show += '<br/>';
+			show = show + 'email : ' + email;
+			show += '<br/>';
+			show = show + 'contact : ' + contact;
+			obj_result = document.getElementById('result');
+			obj_result.innerHTML=show;
+		}
+			form_obj.addEventListener('submit', function(event){
+				event.preventDefault();
+			handleSubmit();
+			});
+			
+		
+	</script>
+</body>
+</html>
