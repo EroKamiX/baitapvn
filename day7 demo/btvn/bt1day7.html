@@ -8,30 +8,59 @@
 	href="bt1day7.css">
 </head>
 <body>
-	<form>
+	<form action="" method="post" id="form-add">
   <div class="form-group">
     <label for="exampleInputInputA">Nhập vào số a :</label>
-    <input type="number" class="form-control" id="exampleInputInputA">
+    <input type="text" class="form-control" value="" id="exampleInputInputA">
   </div>
  <div class="form-group">
-    <label for="exampleInputInputA">Nhập vào số b :</label>
-    <input type="number" class="form-control" id="exampleInputInputB">
-    <button type="button" class="btn btn-primary">Primary</button>
-	<button type="button" class="btn btn-success">Success</button>
-	<button type="button" class="btn btn-danger">Danger</button>
-	<button type="button" class="btn btn-warning">Warning</button>
-	<button type="button" class="btn btn-primary">Primary</button>
-	<button type="button" class="btn btn-success">Success</button>
-	<button type="button" class="btn btn-danger">Danger</button>
-	<button type="button" class="btn btn-warning">Warning</button>
+    <label for="exampleInputInputB">Nhập vào số b :</label>
+    <input type="text" class="form-control" value="" id="exampleInputInputB">
+	 
+    <input type="submit" id="btn-add" class="btn btn-primary" value="a+b">
+	<input type="submit" id="btn-sub" class="btn btn-success" value="a -b">
+	<input type="submit" id="btn-mutil" class="btn btn-danger" value="a * b">
+	<input type="submit" id="btn-divive" class="btn btn-warning" value="a/b">
+	<input type="submit" id="btn-mod" class="btn btn-primary" value="a%b">
+	<input type="submit" id="btn-a++" class="btn btn-success" value="a++">
+	<input type="submit" id="btn-++a" class="btn btn-primary" value="++a">
+	<input type="submit" id="btn-a--" class="btn btn-danger" value="a--">
+	<input type="submit" id="btn---a" class="btn btn-warning" value="--a">
 	 </div>
-	 <input type="submit" class="reset">
-</form>
+	<input type="submit" class="btn btn-warning" value="Reset"/>
+	</form>
+	<div id="error" style="color: red"></div>
+	<div id="result" style="color: green"></div>
 <script type="text/javascript">
-	obj_no1=document.getElementById('exampleInputInputA');
-	no1 = obj_no1.value;
-	obj_no12=document.getElementById('exampleInputInputA');
-	no12 = obj_no2.value;2
+	var form_obj = document.gettextElementById('form-add');
+	function add() {
+		obj_no1=document.getElementById('exampleInputInputA');
+		no1 = obj_no1.value;
+		obj_no2=document.getElementById('exampleInputInputB');
+		no2 = obj_no2.value;
+		var error = '';
+		var result = '';
+		if (no1 == '' || no2 == '') {
+				error = "KHông được để trống dữ liệu";
+			}
+			else if (isNaN(no1) == true || isNaN(nor2) == true) {
+				error = "Bắt buộc phải nhập số";
+			} 
+			else {
+				no1 = parseInt(no1);
+				no2 = parseInt(no2);
+				result = no1 + no2;
+			}
+			error_obj = document.getElementById('error');
+			error_obj.innerHTML = error; 
+			result_obj = document.getElementById('result');
+			result_obj.innerHTML = result;
+		}
+		form_obj.addEventListener('submit', function(event) {
+			//gọi hàm sau để ngăn ngừa hành động mặc định của thẻ
+			event.preventDefault();
+			add();
+		});	
 </script>
 </body>
 </html>
