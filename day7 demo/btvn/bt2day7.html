@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="../../bootstrap.min.css"/>
+</head>
+<body>
+	<form class="container" action="" method="post" onsubmit="return hanldSubmit();">
+  <div class="form-group">
+    <label for="exampleInputInputA">Nhập vào số a :</label>
+    <input type="number" class="form-control" id="noA" value="" >
+    <input type="submit" class="btn btn-primary" value="Kiểm tra" />
+ </div>
+	</form>
+	<div id="error" style="color: red"></div>
+	<div id="result" style="color: green"></div>
+	<script>
+	   function hanldSubmit() {
+		   var result = '';
+		   var obj_no1 = document.getElementById('noA');
+		   var no1 = obj_no1.value;
+		   if ((no1<=10 && no1>=1) || ( no1 >=50 && no2 <=100 )) {
+			   result = 'Số ' + no1 +'nằm trong khoảng 1 -10 và 50 - 100';
+		   }
+		   else {
+			   result = 'Số ' + no1 +'Không nằm trong khoảng 1 -10 và 50 - 100';
+		   }
+		   document.getElementById('result').innerHTML = result;
+	   }
+	  </script>
+	  
+</body>
+</html>

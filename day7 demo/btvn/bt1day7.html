@@ -8,59 +8,83 @@
 	href="bt1day7.css">
 </head>
 <body>
-	<form action="" method="post" id="form-add">
+	<h2>Thực hành toán tử số học</h2>
+	<form class="container" action="" method="post" onsubmit="return false">
   <div class="form-group">
     <label for="exampleInputInputA">Nhập vào số a :</label>
-    <input type="text" class="form-control" value="" id="exampleInputInputA">
+    <input type="text" class="form-control" id="noA" value="" >
   </div>
  <div class="form-group">
     <label for="exampleInputInputB">Nhập vào số b :</label>
-    <input type="text" class="form-control" value="" id="exampleInputInputB">
-	 
-    <input type="submit" id="btn-add" class="btn btn-primary" value="a+b">
-	<input type="submit" id="btn-sub" class="btn btn-success" value="a -b">
-	<input type="submit" id="btn-mutil" class="btn btn-danger" value="a * b">
-	<input type="submit" id="btn-divive" class="btn btn-warning" value="a/b">
-	<input type="submit" id="btn-mod" class="btn btn-primary" value="a%b">
-	<input type="submit" id="btn-a++" class="btn btn-success" value="a++">
-	<input type="submit" id="btn-++a" class="btn btn-primary" value="++a">
-	<input type="submit" id="btn-a--" class="btn btn-danger" value="a--">
-	<input type="submit" id="btn---a" class="btn btn-warning" value="--a">
+    <input type="text" class="form-control" id="noB" value="" >
 	 </div>
-	<input type="submit" class="btn btn-warning" value="Reset"/>
-	</form>
+	 <button type="submit" onclick="calculator('+')" class="btn btn-primary"> a+b</button>
+	 <button type="submit" onclick="calculator('-')" class="btn btn-success"> a -b</button>
+	 <button type="submit" onclick="calculator('*')" class="btn btn-danger"> a * b</button>
+	 <button type="submit" onclick="calculator('/')" class="btn btn-warning"> a/b</button>
+	 <button type="submit" onclick="calculator('%')" class="btn btn-info"> a%b</button>
+	 <button type="submit" onclick="calculator('a++')" class="btn btn-success"> a++</button>
+	 <button type="submit" onclick="calculator('++a')" class="btn btn-primary"> ++a</button>
+	 <button type="submit" onclick="calculator('a--')" class="btn btn-danger"> a--</button>
+	 <button type="submit" onclick="calculator('--a')" class="btn btn-warning"> --a</button>
+	<button type="reset" class="btn btn-warning">Reset dữ liệu</button>
 	<div id="error" style="color: red"></div>
 	<div id="result" style="color: green"></div>
-<script type="text/javascript">
-	var form_obj = document.gettextElementById('form-add');
-	function add() {
-		obj_no1=document.getElementById('exampleInputInputA');
-		no1 = obj_no1.value;
-		obj_no2=document.getElementById('exampleInputInputB');
-		no2 = obj_no2.value;
+	</form>
+	
+	<script>
+		function calculator(operator){
+		var obj_no1 = document.getElementById('noA');
+		var no1 = obj_no1.value;
+		var obj_no2 = document.getElementById('noB');
+		var no2 = obj_no2.value;
 		var error = '';
 		var result = '';
-		if (no1 == '' || no2 == '') {
-				error = "KHông được để trống dữ liệu";
-			}
-			else if (isNaN(no1) == true || isNaN(nor2) == true) {
-				error = "Bắt buộc phải nhập số";
-			} 
-			else {
-				no1 = parseInt(no1);
-				no2 = parseInt(no2);
-				result = no1 + no2;
-			}
-			error_obj = document.getElementById('error');
-			error_obj.innerHTML = error; 
-			result_obj = document.getElementById('result');
-			result_obj.innerHTML = result;
+		// check valiate - check dữ liệu đầu vào người dùng
+		// nếu khong nhập một trong 2 input thì báo lỗi
+		if (no1 == '' || no2==''){
+			error = "Không được để trống";
 		}
-		form_obj.addEventListener('submit', function(event) {
-			//gọi hàm sau để ngăn ngừa hành động mặc định của thẻ
-			event.preventDefault();
-			add();
-		});	
-</script>
+		else if(isNaN(no1) == true || isNaN(no2) == true){
+			error = "Cần phải nhập số";
+		}
+		else {
+//			thực thi pass qua hết valiate theo yêu cầu 
+			no1 = parseInt(no1);
+			no2 = parseInt(no2);
+			switch(operator) {
+					case'+':
+					 result = no1 +no2;
+					 break;
+					case'-':
+					 result = no1 -no2;
+					 break;
+					case'*':
+					 result = no1 *no2;
+					 break;
+					case'/':
+					 result = no1 /no2;
+					 break;
+					case'%':
+					 result = no1 %no2;
+					 break;
+					case'a++':
+					 result = no1++;
+					 break;
+					case'++a':
+					 result = ++no1;
+					 break;
+					case'a--':
+					 result = no1--;
+					 break;
+					case'--a':
+					 result = --no1;
+					 break;
+			}
+		}
+			document.getElementById('error').innerHTML = error;
+			document.getElementById('result').innerHTML = result;
+		}
+	</script>
 </body>
 </html>
