@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>chữa thực hành ngày 8</title>
+</head>
+	<form onSubmit="return sendInfo();">
+		Name: <input type="text" id="name"/>
+		<br>
+		Email: <input type="text" id="email" />
+		<br>
+		Country: 
+		<select id="country">
+			<option value="-1">Select-country</option>
+			<option value="1">Viet Nam</option>
+			<option value="2">JaPan</option>
+			<option value="3">USA</option>
+		</select>
+		<br>
+		<input type="radio" name="gender" value="1">Male
+		<input type="radio" name="gender" value="2">Female
+		<br>
+		<input type="submit" value="Send Info">
+	</form>
+	<div id="error" style="color: red"></div>
+	<div id="result" style="color: green"></div>
+	<script>
+		function sendInfo(){
+			var error = '';
+			var result = '';
+			var obj_name = document.getElementById('name');
+			name = obj_name.value;
+			var obj_email = document.getElementById('email');
+			email = obj_email.value;
+			var a_possition= email.indexOf('@');
+			var dot_possition = eamil.lastIndexOf('.');
+			var obj_country = document.getElementById('country');
+			var country = obj_country.value;
+			if (name =='' ){
+				error = 'Không được để trồng name';
+				obj_name.focus();
+			}
+			else if(email =='' ){
+				error = 'Không được để trồng email';
+				obj_email.focus();
+			}
+//			nếu chưa chọn thì báo lỗi
+			else if (country == -1){
+				error = "cần chọn country";
+				obj_country.focus();
+			}
+			else if (a_possition == 0 || dot_possition - a_possition < 2) {
+				error = "Email không cho phép kí tự @ đứng đầu tiên và kí tự chấm cuối cùng củ thể đứng trước @";
+				obj_email.focus();
+			}
+			else {
+				window.open("mailto:"+ email);
+			}
+			
+			document.getElementById('error').innerHTML = error;
+			document.getElementById('result').innerHTML = result;
+			return false;
+		}
+	</script>
+<body>
+</body>
+</html>
