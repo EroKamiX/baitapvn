@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>chữa thực hành ngày 8</title>
 </head>
-	<form onSubmit="return sendInfo();">
+	<form onSubmit="return sendInfo()">
 		Name: <input type="text" id="name"/>
 		<br>
 		Email: <input type="text" id="email" />
@@ -17,8 +17,8 @@
 			<option value="3">USA</option>
 		</select>
 		<br>
-		<input type="radio" name="gender" value="1">Male
-		<input type="radio" name="gender" value="2">Female
+		<input type="radio" name="gender" id="male" value="1">Male
+		<input type="radio" name="gender" id="female" value="2">Female
 		<br>
 		<input type="submit" value="Send Info">
 	</form>
@@ -29,13 +29,17 @@
 			var error = '';
 			var result = '';
 			var obj_name = document.getElementById('name');
-			name = obj_name.value;
+			var name = obj_name.value;
 			var obj_email = document.getElementById('email');
-			email = obj_email.value;
-			var a_possition= email.indexOf('@');
-			var dot_possition = eamil.lastIndexOf('.');
+			var email = obj_email.value;
+			var a_position = email.indexOf('@');
+			var dot_position = email.lastIndexOf('.');
 			var obj_country = document.getElementById('country');
 			var country = obj_country.value;
+			var obj_male = document.getElementById('male');
+//			var male = obj_male.value;
+			var obj_female = document.getElementById('female');
+//			var female = obj_female.value;
 			if (name =='' ){
 				error = 'Không được để trồng name';
 				obj_name.focus();
@@ -49,12 +53,18 @@
 				error = "cần chọn country";
 				obj_country.focus();
 			}
-			else if (a_possition == 0 || dot_possition - a_possition < 2) {
+			
+
+			else if (a_position == 0 || dot_position - a_position < 2) {
 				error = "Email không cho phép kí tự @ đứng đầu tiên và kí tự chấm cuối cùng củ thể đứng trước @";
 				obj_email.focus();
 			}
+			else if (obj_male.checked == false && obj_name.checked == false){
+				error = "cần check ô gender";
+				obj_male.focus();
+			}
 			else {
-				window.open("mailto:"+ email);
+				window.location = "http://google.com";
 			}
 			
 			document.getElementById('error').innerHTML = error;

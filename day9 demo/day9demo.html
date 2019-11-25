@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo jQuery</title>
+ 	<script src="../jquery-3.4.1.min.js" type="text/javascript">
+	
+	</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link href="../bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<h1>Chương trình jQuery đầu tiên</h1>
+<!--
+	<script type="text/javascript">
+	 $(document).ready(function() {
+	 	document.write("Hello,  Jquery");
+		
+	 });
+	</script>
+-->
+<!--	DOM-->
+<!--	document object model-->
+<p class="p-class" title="P Class"></p>
+	<a id="test" href="#">
+		click show popup
+	</a>
+
+	<script type = "text/javascript">
+		// lấy ra dối tượng theo id 	
+	// sử dung jQuery thay thế
+		$(document).ready(function () {
+			var obj_a = document.getElementById('test');
+			var a = obj_a;
+			console.log(a);
+		})
+		
+		
+	</script>
+	
+	
+	<p id="p-selecter">
+		nội dung bên trong thẻ P
+	</p>
+	
+	<input type= "text" value="123" name="number1"/>
+	<input type= "text" value="345" name="number2"/>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var p_value = $('#p-selecter').text();
+			console.log(p_value);
+			
+			var number1 =$('input[name=number1]').val();
+			var number2 =$('input[name=number2]').val();
+			$('input[type=text]').val('new value');
+			console.log(number1,number2);
+			var p_class=$('.p-class').attr('title');
+			console.log("title= " +p_class);
+		})
+	</script>
+	<input id="email-id" type="email" value="" placeholder="nhập email" title = "Title Email">
+	<input type="radio" name="radio" value="1">maile
+	<p id="p-check-class" class="red blue green">
+		<span style="color :red">
+			thẻ p với 3 class
+		</span>
+		
+	</p>
+	<script type ="text/javascript">
+		$(document).ready( function (){
+			
+			var value = $('input[type=radio]').val();
+			//set
+			$('input[type=radio]').val("kí tự loằng ngoằng");
+			var is_class = $('#p-check-class').hasClass('red');
+			console.log(is_class);
+//			xoá class 
+			$('#p-check-class').removeClass('green');
+			//get
+			var placeholder = $('#email-id').attr('placeholder');
+			console.log("place holder dang có giá trị" + placeholder);
+			//set
+			$('#email-id').attr('placeholder', 'new placeholder');
+			var content_html = $('#p-check-class').html();
+			var content_text = $('#p-check-class').text();
+			console.log(content_html,content_text);
+			//set nội dung 
+			$('#p-check-class').text("<a style")
+		});
+	</script>
+	<p id="p-dom"> noi dung dom</p>
+	<script type="text/javascript">
+		//3 jquery dom
+		$(document).ready(function () {
+//			$('#p-dom').remove();
+			$('#p-dom').after("<p> nội dung thẻ p them vào phía sau đối tượng hiện tái </p>");
+			$('#p-dom').before("<p> nội dung thẻ p them vào phía trước đối tượng hiện tái </p>");
+			$('#p-dom').append("<a>Nắm bên đối tượng hiện tại ở vị trí sau cùng </a>");
+			$('#p-dom').prepend("<a>Nắm bên đối tượng hiện tại ở vị trí trên cùng </a>");
+		});	
+	</script>
+	<a id="a-event" href="http://google.vn" target="_blank">
+		Click thẻ a đẻ sang trang google
+	</a>
+	<form id="form-event">
+		<input type="submit" value="" name="submit form">
+	</form>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#form-event').submit(function(){
+				alert("submit form!");
+				return false;
+			})
+		 $('#a-event').click(function(event) {
+			 alert("clicked");
+			 
+			 event.preventDefault();
+			 return false;
+		 });
+		});
+	</script>
+<!--	5 jquery Effect-->
+<div id="div-effect" style="width: 200px; height: 200px; background: red"></div>
+<a href="#" id="a-click-open">
+	click đẻ hiển thị
+</a>
+<a href="#" id="a-click-close">
+	click đẻ ẩn div
+</a>
+<button id="button-effect">click dẻ hien thị</button>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#a-click-close').click(function(){
+//				$('#div-effect').hide(300);
+				$('#div-effect').fadeOut(300);
+			})
+			$('#a-click-open').click(function(){
+//				$('#div-effect').show(1000);
+				$('#div-effect').fadeIn(1000);
+			})
+			
+			$('#button-effect').click(function() {
+//				$('#div-effect').toggle(2000);
+				var obj = {
+					width: "70%", 
+					opacity: 0.5 ,
+					marginLeft: '50px',
+					fontSize: "40px",
+					borderWidth: "10px",
+				}
+				$('#div-effect').animate(obj, 2000);
+			})
+		})
+	</script>
+	<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
