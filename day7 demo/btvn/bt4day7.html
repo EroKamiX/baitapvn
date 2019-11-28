@@ -2,40 +2,93 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>bt3 day 7 </title>
-<link rel="stylesheet" href="../../bootstrap.min.css"/>
+<title>Untitled Document</title>
+	<link rel="stylesheet" type="text/css" href="../../bootstrap.min.css">
+	<link rel="stylesheet" type="text/css"
+	href="bt1day7.css">
 </head>
+
 <body>
-	<form class="container" action="" method="post" onsubmit="return checkPrimeNumber();">
+		<h2>Thực hành toán tử số học</h2>
+	<form class="container" action="" method="post" onsubmit="return ptb1()">
   <div class="form-group">
     <label for="exampleInputInputA">Nhập vào số a :</label>
-    <input type="number" class="form-control" id="noA" value="" >
-    <input type="submit" class="btn btn-primary" value="Kiểm tra" />
- </div>
- <div id="result" style="color: green"></div>
-	</form>
+    <input type="text" class="form-control" id="noA" value="" >
+  </div>
+ <div class="form-group">
+    <label for="exampleInputInputB">Nhập vào số b :</label>
+    <input type="text" class="form-control" id="noB" value="" >
+	 </div>
+<div class="form-group">
+    <label for="exampleInputInputC">Nhập vào số c :</label>
+    <input type="text" class="form-control" id="noC" value="" >
+  </div>
 	
+		<div id="text"></div>
+		<div id="bieuthuc"></div>
+	<input type="submit" class="btn btn-primary" value ="tìm X">	
+	<div id="error" style="color: red"></div>
+	<div id="result" style="color: green"></div>
+	</form>
 	<script>
-		function checkPrimeNumber() {
-		
-		var obj_no1 = document.getElementById('noA');
-		var no1 = obj_no1.value;
-		var result = no1+' != ';
-		var giaithua= 1;
-			for (var i=1;i<=no1;i++){
-				giaithua*=i;
-				result += i;
-				if (i==no1){
-					continue;
-				}
-				result += ' x ';
+		function ptb1() {
+			var error = '';
+			var result ='';
+			var obj_no1 = document.getElementById('noA');
+			var no1 = obj_no1.value;
+			var obj_no2 = document.getElementById('noB');
+			var no2 = obj_no2.value;
+			var obj_no3 = document.getElementById('noC');
+			var no3 = obj_no3.value;
+			var delta ='';
+			var x1 = '';
+			var x2 = '';
+			var ham = no1 + 'x<sup>2</sup> + ' + no2 + 'x + ' + no3 + ' = 0';
+			var text = 'Phương trình có dạng';
+			
+			if (no1=='' || no2 =='' || no3== ''){
+				error = 'Nhập dữ liệu ';
 			}
-			document.getElementById('result').innerHTML= result+ '=' + giaithua;
+			else if (isNaN(no1) == true || isNaN(no2==true) || isNaN(no3)==true){
+				error = 'Cần nhập số';
+			}
+			else {
+				document.getElementById('text').innerHTML = text;
+				document.getElementById('bieuthuc').innerHTML = ham;
+				no1 = parseInt(no1);
+				no2 = parseInt(no2);
+				no3 = parseInt(no3);
+				if (no1 == 0){
+					if(no2 ==0 && no3 == 0 ){
+						result = 'Phương trình vố số nghiệm';
+					}
+					else if (no2 ==0 && no3 != 0 ){
+						result = 'Phương trình vô nghiệm';
+					}
+					else {
+						result ='x =' + -no3/no2;
+					}
+				}
+				else {
+					delta = no2*no2 - (4*no3*no1);
+					if (delta <0) {
+						result = 'Phương trình vô nghiệm';
+					}
+					else if (delta == 0) {
+						result = 'x = ' + -no2/(no1 *2);
+					}
+					else {
+						x1 = ((-no2) + Math.sqrt(delta))/(no1 *2);
+						x2 = ((-no2) - Math.sqrt(delta))/(no1 *2);
+						result = 'x1 = ' + x1 + ' và x2 = '+ x2;
+					}
+				}
+			}
+			
+			document.getElementById('error').innerHTML = error;
+			document.getElementById('result').innerHTML = result;
 			return false;
 		}
-		
-		
-	  </script>
-	  
+	</script>
 </body>
 </html>

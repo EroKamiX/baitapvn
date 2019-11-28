@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>bt3 day 7 </title>
+<link rel="stylesheet" href="../../bootstrap.min.css"/>
+</head>
+<body>
+	<form class="container" action="" method="post" onsubmit="return checkPrimeNumber();">
+  <div class="form-group">
+    <label for="exampleInputInputA">Nhập vào số a :</label>
+    <input type="number" class="form-control" id="noA" value="" >
+    <input type="submit" class="btn btn-primary" value="Kiểm tra" />
+ </div>
+ <div id="result" style="color: green"></div>
+	</form>
+	
+	<script>
+		function checkPrimeNumber() {
+		var result = '';
+		var obj_no1 = document.getElementById('noA');
+		var no1 = obj_no1.value;
+			if (no1 <2){
+				result= 'số ' + no1 + 'không phải là số nguyên tố';
+			}
+			else {
+				is_prime = true;
+			for (i=2;i<=Math.sqrt(no1);i++){
+				if (no1%i==0){
+					is_prime = false;
+					break;
+				}
+			}
+				if (is_prime == true) {
+					result= 'số ' + no1 + 'là số nguyên tố';
+				}
+				else {
+					result= 'số ' + no1 + 'không phải là số nguyên tố';
+				}
+			}
+			document.getElementById('result').innerHTML= result;
+			return false;
+		}
+		
+		
+	  </script>
+	  
+</body>
+</html>

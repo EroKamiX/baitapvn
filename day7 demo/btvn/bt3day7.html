@@ -2,48 +2,59 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>bt3 day 7 </title>
-<link rel="stylesheet" href="../../bootstrap.min.css"/>
+<title>Untitled Document</title>
+	<link rel="stylesheet" type="text/css" href="../../bootstrap.min.css">
+	<link rel="stylesheet" type="text/css"
+	href="bt1day7.css">
 </head>
+
 <body>
-	<form class="container" action="" method="post" onsubmit="return checkPrimeNumber();">
+		<h2>Thực hành toán tử số học</h2>
+	<form class="container" action="" method="post" onsubmit="return ptb1()">
   <div class="form-group">
     <label for="exampleInputInputA">Nhập vào số a :</label>
-    <input type="number" class="form-control" id="noA" value="" >
-    <input type="submit" class="btn btn-primary" value="Kiểm tra" />
- </div>
- <div id="result" style="color: green"></div>
-	</form>
+    <input type="text" class="form-control" id="noA" value="" >
+  </div>
+ <div class="form-group">
+    <label for="exampleInputInputB">Nhập vào số b :</label>
+    <input type="text" class="form-control" id="noB" value="" >
+	 </div>
 	
+		<div id="text"></div>
+		<div id="bieuthuc"></div>
+	<input type="submit" class="btn btn-primary" value ="tìm X">	
+	<div id="error" style="color: red"></div>
+	<div id="result" style="color: green"></div>
+	</form>
 	<script>
-		function checkPrimeNumber() {
-		var result = '';
-		var obj_no1 = document.getElementById('noA');
-		var no1 = obj_no1.value;
-			if (no1 <2){
-				result= 'số ' + no1 + 'không phải là số nguyên tố';
+		function ptb1() {
+			var error = '';
+			var result ='';
+			var obj_no1 = document.getElementById('noA');
+			var no1 = obj_no1.value;
+			var obj_no2 = document.getElementById('noB');
+			var no2 = obj_no2.value;
+			var ham = no1 + 'x +' + no2 + ' = 0';
+			var text = 'Phương trình có dạng';
+			
+			if (no1=='' || no2 ==''){
+				error = 'Nhập dữ liệu ';
+			}
+			else if (isNaN(no1) == true || isNaN(no2==true)){
+				error = 'Cần nhập số';
 			}
 			else {
-				is_prime = true;
-			for (i=2;i<=Math.sqrt(no1);i++){
-				if (no1%i==0){
-					is_prime = false;
-					break;
-				}
+				document.getElementById('text').innerHTML = text;
+				document.getElementById('bieuthuc').innerHTML = ham;
+				no1 = parseInt(no1);
+				no2 = parseInt(no2);
+				result =  -no2/no1;
 			}
-				if (is_prime == true) {
-					result= 'số ' + no1 + 'là số nguyên tố';
-				}
-				else {
-					result= 'số ' + no1 + 'không phải là số nguyên tố';
-				}
-			}
-			document.getElementById('result').innerHTML= result;
+			
+			document.getElementById('error').innerHTML = error;
+			document.getElementById('result').innerHTML = result;
 			return false;
 		}
-		
-		
-	  </script>
-	  
+	</script>
 </body>
 </html>
