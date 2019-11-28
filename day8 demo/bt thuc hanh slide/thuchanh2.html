@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Thực hành 2</title>
+
+<script type="text/javascript" rel="stylesheet"  src="../../jquery-3.4.1.min.js">
+	
+	</script>
+	<link type="text/css" rel="stylesheet" href="../../bootstrap.min.css">
+</head>
+<body>
+	<h1>Validate Form Using Javascrip</h1>
+	
+	<form class="container" onsubmit="return validate()">
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-3 col-form-label">Name<span id="check-name" style="color: red"></span></label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="name" value="">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="Address" class="col-sm-3 col-form-label">Address<span id="check-address" style="color: red"></span></label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="address" placeholder="">
+		</div>
+	</div>
+		<div class="form-group row">
+    <label for="staticEmail" class="col-sm-3 col-form-label">Zip Code<span id="check-code" style="color: red"></span></label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="code" value="">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="Address" class="col-sm-3 col-form-label">Country<span id="check-country" style="color: red"></span></label>
+    <div class="col-sm-9">
+      <select id="country">
+		<option value="-1">Please select</option>
+		  <option value="1">Viet Nam</option>
+		  <option value="2">Japan</option>
+		  <option value="3">USA</option>
+		</select>
+    </div>
+  </div>
+	<div class="form-group row">
+    <label for="staticEmail" class="col-sm-3 col-form-label">Gender<span id="check-gender" style="color: red"></span></label>
+    <div class="col-sm-9">
+    	<input type="radio"  id="male" name="gender" > Male 
+		<input type="radio"  id="female" name="gender" value=""> Female
+    </div>
+  </div>
+	<div class="form-group row">
+    <label for="staticEmail" class="col-sm-3 col-form-label">Preferences<span id="check-color" style="color: red"></span></label>
+    <div class="col-sm-9">
+		<input type="checkbox"  id="red" name="color" value=""> Red
+		<input type="checkbox"  id="green" name="color" value=""> Green
+		<input type="checkbox"  id="blue" name="color" value=""> Blue
+    </div>
+  </div>
+		<input  type="submit" value="SEND" >
+</form>
+	
+	<script type="text/javascript">
+		function validate() {
+			var name = document.getElementById('name').value;
+			var address = document.getElementById('address').value;
+			var code = document.getElementById('code').value;
+			var country = document.getElementById('country').value;
+			var male = document.getElementById('male');
+			var female = document.getElementById('female');
+			var red = document.getElementById('red');
+			var green = document.getElementById('green');
+			var blue = document.getElementById('blue');
+			
+			var error = "*";
+			var clear ='';
+			
+			if (name == "") { document.getElementById('check-name').innerHTML = error}
+			else {document.getElementById('check-name').innerHTML =clear}
+			if (address == ""){document.getElementById('check-address').innerHTML = error}
+			else {document.getElementById('check-address').innerHTML =clear}
+			if (code == "") {document.getElementById('check-code').innerHTML = error}
+			else {document.getElementById('check-code').innerHTML =clear}
+			if (country == -1) {document.getElementById('check-country').innerHTML = error}
+			else {document.getElementById('check-country').innerHTML =clear}
+			
+			if (male.checked == false && female.checked == false){
+				document.getElementById('check-gender').innerHTML = error
+			}
+			else {document.getElementById('check-gender').innerHTML =clear}
+			
+			if (red.checked == false && green.checked == false && blue.checked == false){
+				document.getElementById('check-color').innerHTML = error
+			}
+			else {document.getElementById('check-color').innerHTML =clear}
+			
+			
+			return false;
+		}
+	</script>
+</body>
+</html>
