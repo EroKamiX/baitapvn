@@ -1,0 +1,113 @@
+.container {
+	max-width: 40%;
+	margin-right: auto;
+	padding:0px;
+}
+#form-bt-1 {
+	max-width: 30%;
+	margin: auto;
+	border: #ccc solid 1px;
+}
+#form-bt-1 h3 {
+	background: #feffed;
+	padding:  15px;
+	text-align: center;
+}
+#form-bt-1 .form-group{
+	padding: 15px;
+}
+.result {
+	color = blue;
+}
+.error {
+	color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*bai tap 6*/
+
+.wrap-form {
+	max-width: 60%;
+	margin: auto;
+	background: #4cc3fc;
+	padding: 10px 100px 50px 100px;
+}
+.form-info {
+	background: #fffef7
+}
+.form-header {
+	color: #147abe;
+	padding: 10px 30px;
+	font-weight: bold;
+}
+.form-image {
+	height: 200px;
+	background: #0d0041;
+}
+.wrap-input {
+	padding: 50px;
+}
+fieldset {
+	border: #A9E2FA solid 2px;
+	padding: 15px;
+}
+input , textarea, select {
+	background: inherit !important;
+}
+legend {
+	font-size: 20px;
+	width: auto;
+	padding: 0 20px;
+	color: #A9E2FA;
+}
+.guest-text {
+	font-size: 20px;
+	color: #A9E2FA;
+}
+select.form-control {
+	width: auto;
+	display: inline-block ;
+	
+}
+.wrap-submit {
+	position: relative;
+}
+button[type=submit]{
+	position: absolute;
+    top: 30px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+.form-footer {
+	text-align: center;
+	padding: 50px 0;
+	font-size: 20px;
+	color: #fff;
+}
+.call-phone {
+	display: block;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
