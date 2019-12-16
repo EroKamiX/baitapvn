@@ -11,12 +11,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="demo.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="demo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="829">
+            <state relative-caret-position="664">
               <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="thuchanh1.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/thuchanh1.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="584">
+              <caret line="49" column="14" lean-forward="false" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
+              <folding>
+                <marker date="1576506475291" expanded="true" signature="379:389" ph="..." />
+                <marker date="1576506475291" expanded="true" signature="445:455" ph="..." />
+                <marker date="1576506475291" expanded="true" signature="511:521" ph="..." />
+                <marker date="1576506475291" expanded="true" signature="612:622" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -27,6 +42,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/demo.php" />
+        <option value="$PROJECT_DIR$/thuchanh1.php" />
       </list>
     </option>
   </component>
@@ -101,12 +117,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576500369738</updated>
-      <workItem from="1576500370863" duration="3587000" />
+      <workItem from="1576500370863" duration="5903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3587000" />
+    <option name="totallyTimeSpent" value="5903000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -147,9 +163,22 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/demo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="829">
+        <state relative-caret-position="664">
           <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thuchanh1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="49" column="14" lean-forward="false" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
+          <folding>
+            <marker date="1576506475291" expanded="true" signature="379:389" ph="..." />
+            <marker date="1576506475291" expanded="true" signature="445:455" ph="..." />
+            <marker date="1576506475291" expanded="true" signature="511:521" ph="..." />
+            <marker date="1576506475291" expanded="true" signature="612:622" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
