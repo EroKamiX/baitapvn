@@ -135,6 +135,5 @@ function primary ($n)
 }
 primary($number);
 if ($is_primary == true) {
-    echo
 }
 ?>
