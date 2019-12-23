@@ -58,7 +58,7 @@ body {
 	background-image: url(image/bt2.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 213px;
+ 
 }
 .main-top-right {
 	text-align: center;
@@ -106,4 +106,7 @@ body {
 .post-des {
 	color: #cf8b1f;
 	margin: -10px 0;
+}
+.img {
+	position: relative;
 }

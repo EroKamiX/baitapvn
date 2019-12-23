@@ -8,6 +8,11 @@
 	
 	</script>
 	<link type="text/css" rel="stylesheet" href="../../bootstrap.min.css">
+	<style>
+		.note {
+			color: red;
+		}
+	</style>
 </head>
 <body>
 	<h1>Validate Form Using Javascrip</h1>
@@ -96,6 +101,7 @@
 			var red = document.getElementById('red');
 			var green = document.getElementById('green');
 			var blue = document.getElementById('blue');
+			var phone = document.getElementById('phone').value;
 			
 			var error = "*";
 			var clear ='';
@@ -118,7 +124,11 @@
 				document.getElementById('check-color').innerHTML = error
 			}
 			else {document.getElementById('check-color').innerHTML =clear}
-			
+			if (isNaN(phone)== true){
+				document.getElementById('check-phone').innerHTML = error;
+				$('#phone').after("<smail class = 'note'> cần nhập dữ liệu là số</smail>")
+			}
+			else {document.getElementById('check-color').innerHTML =clear}
 			
 			return false;
 		}
