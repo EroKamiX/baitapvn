@@ -7,9 +7,9 @@ $result = mysqli_query($connection,$sql_select);
 $students = [];
 if (mysqli_num_rows($result)){
     $students = mysqli_fetch_all($result,MYSQLI_ASSOC);
-    echo '<pre>';
-    print_r($students);
-    echo '</pre>';
+//    echo '<pre>';
+//    print_r($students);
+//    echo '</pre>';
 }
 ?>
 <h3 style="color: red"><?php if (isset($_SESSION['error'])){
