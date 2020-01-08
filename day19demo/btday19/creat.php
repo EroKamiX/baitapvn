@@ -18,13 +18,13 @@ if (isset($_POST['submit'])) {
         $name = $_POST['name'];
         $description = $_POST['description'];
         $salary = $_POST['salary'];
-        $birthday = $_POST['birthday'];
+        $birthday = date("Y-m-d H:i:s",strtotime($_POST['birthday']));
         $gender = $_POST['gender'];
 
-        $insert = "INSERT INTO employees (`name`,`description`,`gender`,`salary`,`birthday`) VALUE ('$name','$description',$gender,$salary,$birthday)";
+        $insert = "INSERT INTO employees (`name`,`description`,`gender`,`salary`,`birthday`) VALUE ('$name','$description',$gender,$salary,'$birthday')";
         $is_insert = mysqli_query($connection,$insert);
         if ($is_insert){
-            $_SESSION['error'] = "Thêm thanh cong";
+            $_SESSION['success'] = "Thêm thanh cong";
         }
         else {
             $_SESSION['error']= "Thêm that bai";
@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
     <br>
     Birthday:
     <br>
-    <input type="date" name="birthday" id="">
+    <input type="date" name="birthday" >
     <br>
     <button type="submit" name="submit" class="btn-primary" >Save</button>
     <button type="reset" class="btn btn-light">Cancel</button>

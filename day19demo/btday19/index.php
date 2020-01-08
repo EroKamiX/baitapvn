@@ -11,6 +11,7 @@ if (mysqli_num_rows($result) > 0){
 ?>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+<link rel="stylesheet" href="css/all.min.css">
 <div class="container">
     <h3 style="color: red"><?php if (isset($_SESSION['error'])){
             echo $_SESSION['error'];
@@ -60,7 +61,8 @@ if (mysqli_num_rows($result) > 0){
             <td><?php echo date("d-m-Y H:i:s",strtotime($employee['created_at'])) ?></td>
             <td><a href="detail.php?id=<?php echo $employee['id'];?>"><i class="fas fa-eye"></i></a>
                 <a href="update.php?id=<?php echo $employee['id'];?>"><i class="fas fa-pencil-alt"></i></a>
-                <a href="delete.php?id=<?php echo $student['id'];?>"><i class="far fa-trash-alt"></i></a>
+                <a href="delete.php?id=<?php echo $employee['id'];?>"
+onclick="return confirm('DO YOU WANNA DELETE')" ><i class="far fa-trash-alt"></i></a>
             </td>
         </tr>
 

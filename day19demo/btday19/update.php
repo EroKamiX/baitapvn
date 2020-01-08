@@ -14,6 +14,9 @@ else {
     if (mysqli_num_rows($result)>0){
         $employees = mysqli_fetch_all($result,MYSQLI_ASSOC);
         $employee = $employees[0];
+        echo "<pre>";
+        print_r($employee);
+        echo "</pre>";
     }
 
 }
@@ -33,13 +36,15 @@ if (isset($_POST['submit'])) {
         $name = $_POST['name'];
         $description = $_POST['description'];
         $salary = $_POST['salary'];
-        $birthday = $_POST['birthday'];
+        //fỏmat
+        $birthday = date("Y-m-d H:i:s",strtotime($_POST['birthday']));
         $gender = $_POST['gender'];
-
-        $sql_update = "UPDATE employees SET `name` = '$name',`description` = '$description', `salary` = $salary,`birthday` = $birthday
+        //do e chưa bao lấy biến $bỉthday trong 1 chuỗi nên nó báo lỗi cú pháp, danã đến ko update đc
+        $sql_update = "UPDATE employees SET `name` = '$name',`description` = '$description', `salary` = $salary,`birthday` = '$birthday'
         , `gender`= $gender WHERE id = $id" ;
+//        print_r($sql_update);die;
         $is_update = mysqli_query($connection,$sql_update);
-        if ($is_update){
+        if ($is_update) {
             $_SESSION['success'] = "Cập nhật thanh cong";
         }
         else {
@@ -76,7 +81,7 @@ exit()?>
         <br>
         Salary:
         <br>
-        <input type="number" name="salary" value=" <?php echo $employee['salary']?>">
+        <input type="number" name="salary" value="<?php echo $employee['salary']?>">
         <br>
         Gender:
         <br>
@@ -85,7 +90,8 @@ exit()?>
         <br>
         Birthday:
         <br>
-        <input type="date" name="birthday" value="<?php echo $employee['birthday']?>">
+<!--     format bắt buộc phải là Y-m-d với input type = date nhé, a vừa checfk lạioke   -->
+        <input type="date" name="birthday" value="<?php echo date("Y-m-d",strtotime($employee['birthday']))?>">
         <br>
         <button type="submit" name="submit" class="btn-primary" >Save</button>
         <button type="reset" name="reset" class="btn btn-light">Cancel</button>
