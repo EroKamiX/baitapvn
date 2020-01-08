@@ -1,9 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <?php
+session_start();
 $error = '';
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
 if (isset($_POST['submit'])) {
     if (empty($_POST['name'])) {
         $error = 'Không được để trống trường name';
@@ -23,19 +21,22 @@ if (isset($_POST['submit'])) {
         $birthday = $_POST['birthday'];
         $gender = $_POST['gender'];
 
-        $insert = "INSERT INTO employees (`name`,`description`,`gender`,`salary`,`birthday`) VALUE ($name,$description,$gender,$salary,$birthday)";
+        $insert = "INSERT INTO employees (`name`,`description`,`gender`,`salary`,`birthday`) VALUE ('$name','$description',$gender,$salary,$birthday)";
         $is_insert = mysqli_query($connection,$insert);
         if ($is_insert){
-            $error = "thanh cong";
+            $_SESSION['error'] = "Thêm thanh cong";
         }
         else {
-            $error= "that bai";
+            $_SESSION['error']= "Thêm that bai";
         }
     }
+    header("Location: index.php");
 }
 
 
 ?>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<div class="container">
 <h3><?php echo $error?></h3>
 <h3>Create Record</h3>
 <form method="post" action="">
@@ -60,9 +61,9 @@ if (isset($_POST['submit'])) {
     <br>
     <input type="date" name="birthday" id="">
     <br>
-    <button type="submit" name="submit">Save</button>
-    <button type="reset">Cancel</button>
+    <button type="submit" name="submit" class="btn-primary" >Save</button>
+    <button type="reset" class="btn btn-light">Cancel</button>
 
 
 </form>
-
+</div>
