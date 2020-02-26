@@ -30,7 +30,18 @@ class Book {
      * Liet ke danh sach book dang co trong db
      */
     public function listBook(){
-        echo 'phuong thuc listBook';
+        $connection = $this->connectDB();
+        $query_select = "SELECT * FROM book";
+        $result = mysqli_query($connection,$query_select);
+        if (mysqli_num_rows($result)>0){
+            $booklist =  mysqli_fetch_all($result,MYSQLI_ASSOC);
+            echo '<pre>';
+            print_r($booklist);
+            echo '</pre>';
+
+        }
+        return $result;
+        $this->disconnectDB($connection);
     }
     public function insertBook(){
         $connection = $this->connectDB();
@@ -40,20 +51,20 @@ class Book {
         return $is_insert;
     }
     public function editBook($id){
-        echo 'phuong thuc editBook';
+        $connection = $this->connectDB();
+        $query_update = "UPDATE book SET `name` = '{$this->name}', `amount` = {$this->amount} WHERE id = $id ";
+        $is_update = mysqli_query($connection,$query_update);
+        $this->disconnectDB($connection);
+        return $is_update;
     }
     public function deleteBook($id){
-        echo 'phuong thuc deleteBook';
+        $connection = $this->connectDB();
+        $query_delete = "DELETE FROM book WHERE id = $id";
+        $is_delete = mysqli_query($connection,$query_delete);
+        $this->disconnectDB($connection);
+        return $is_delete;
     }
 }
 $book = New Book;
-$book->name = 'sach van hoc';
-$book->amount = 123;
-$is_insert = $book ->insertBook();
-$book->insertBook();
-if ($is_insert){
-    echo 'them sach thanh cong';
-}
-else {
-    echo 'ket noi khong thanh cong';
-}
+?>
+
