@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -5,6 +6,7 @@
  * Date: 2/29/2020
  * Time: 3:35 PM
  */
+session_start();
 $controller = isset($_GET['controller']) ? $_GET['controller'] :'employee';
 $action = isset($_GET['action']) ? $_GET['action'] : 'listEmployee';
 $controller = ucfirst($controller);
@@ -20,4 +22,8 @@ if (!method_exists($object,$action)){
 }
 $object->$action();
 ?>
+<link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
 

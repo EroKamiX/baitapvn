@@ -5,6 +5,7 @@
  * Date: 2/29/2020
  * Time: 3:36 PM
  */
+require_once "view/layouts/header.php"
 ?>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
@@ -15,7 +16,7 @@
             <h3>Employees List</h3>
         </div>
         <div class="col-md-6">
-            <button class="btn btn-success" type="submit" name="addEmployee"><?php $_GET['action'] = 'create' ?>+ New Employee</button>
+            <button class="btn btn-success"><a href="index.php?action=create">+ New Employee</a></button>
         </div>
     </div>
     <table border ="1" cellspacing = "0" cellpadding = "10">
@@ -48,9 +49,9 @@
                         }?></td>
                     <td><?php echo date("d/m/Y", strtotime($employee['birthday']))?></td>
                     <td><?php echo date("d-m-Y H:i:s",strtotime($employee['created_at'])) ?></td>
-                    <td><a href="detail.php?id=<?php echo $employee['id'];?>"><i class="fas fa-eye"></i></a>
-                        <a href="update.php?id=<?php echo $employee['id'];?>"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="delete.php?id=<?php echo $employee['id'];?>"
+                    <td><a href="index.php?id=<?php echo $employee['id'];?>&action=detail"><i class="fas fa-eye"></i></a>
+                        <a href="index.php?id=<?php echo $employee['id'];?>&action=update"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="index.php?id=<?php echo $employee['id'];?>&action=delete"
                            onclick="return confirm('DO YOU WANNA DELETE')" ><i class="far fa-trash-alt"></i></a>
                     </td>
                 </tr>
@@ -59,3 +60,6 @@
         <?php endif;?>
     </table>
 </div>
+<?php
+require_once "view/layouts/footer.php"
+?>

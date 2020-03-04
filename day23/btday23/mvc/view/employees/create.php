@@ -5,8 +5,9 @@
  * Date: 2/29/2020
  * Time: 3:35 PM
  */
+require_once "view/layouts/header.php"
 ?>
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
 <div class="container">
     <h3>Create Record</h3>
     <form method="POST" action="">
@@ -25,7 +26,7 @@
         <br>
         Gender:
         <br>
-        <input type="radio" name="gender" value="1"> Male <input type="radio" name="gender" value="2"> Female
+        <input type="radio" name="gender" value="1"> Male <input type="radio" name="gender" value="0"> Female
         <br>
         Birthday:
         <br>
@@ -37,4 +38,4 @@
 
     </form>
 </div>
-
+<?php require_once "view/layouts/footer.php"?>
