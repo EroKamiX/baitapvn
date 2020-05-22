@@ -6,6 +6,7 @@
  * Time: 3:25 PM
  */
 require_once 'controllers/Controller.php';
+require_once 'controllers/LoginController.php';
 require_once 'models/Category.php';
 class CategoryController  extends Controller
 {
@@ -27,12 +28,12 @@ class CategoryController  extends Controller
     }
     public function create() {
         if (isset($_POST['submit'])) {
-            $user = $_POST['user'];
+            $names = $_POST['names'];
             $title = $_POST['title'];
             $description = $_POST['description'];
             $pic_des = $_FILES['pic_des'];
             $extension_arr = ['png','jpg','jpeg','gif'];
-            if (empty($user)) {
+            if (empty($names)) {
                 $this ->error  = 'Khai báo User';
             }
             elseif (empty($title)) {
@@ -60,7 +61,7 @@ class CategoryController  extends Controller
 
             $news_model = New Category();
             $news_model->pic_des = $file_name;
-            $news_model->user = $user;
+            $news_model->names = $names;
             $news_model ->description = $description;
             $news_model ->title = $title;
             $is_insert = $news_model->insert();
@@ -95,12 +96,12 @@ class CategoryController  extends Controller
             exit();
         }
         if (isset($_POST['submit'])) {
-            $user = $_POST['user'];
+            $names = $_POST['names'];
             $title = $_POST['title'];
             $description = $_POST['description'];
             $pic_des = $_FILES['pic_des'];
             $extension_arr = ['png','jpg','jpeg','gif'];
-            if (empty($user)) {
+            if (empty($names)) {
                 $this ->error  = 'Khai báo User';
             }
             elseif (empty($title)) {
@@ -130,7 +131,7 @@ class CategoryController  extends Controller
 
 
                 $news_model->pic_des = $file_name;
-                $news_model->user = $user;
+                $news_model->names = $names;
                 $news_model ->description = $description;
                 $news_model ->title = $title;
                 $news_model ->updated_at = date('Y-m-d H:i:s');
@@ -196,6 +197,14 @@ class CategoryController  extends Controller
         } else {
             $_SESSION['error'] = 'DELETE thất bại';
         }
+        header("Location: index.php");
+        exit();
+    }
+    public function logout() {
+        require_once "configs/ggconfig.php";
+        $google_client->revokeToken();
+        session_destroy();
+        $_SESSION['username'] = NULL;
         header("Location: index.php");
         exit();
     }

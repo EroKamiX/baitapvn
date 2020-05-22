@@ -9,9 +9,9 @@
         <h2>Chỉnh sửa danh mục #<?php echo $category['id'] ?></h2>
         <form method="post" action="" enctype="multipart/form-data">
             <div class="form-group">
-                <label>User</label>
-                <input type="text" name="user"
-                       value="<?php echo isset($_POST['user']) ? $_POST['user'] : $category['user']; ?>"
+                <label>Names</label>
+                <input type="text" name="names"
+                       value="<?php echo isset($_POST['names']) ? $_POST['names'] : $category['names']; ?>"
                        class="form-control"/>
             </div>
             <div class="form-group">

@@ -1,13 +1,4 @@
 
-</div>
-<?php
-/**
- * Created by PhpStorm.
- * User: tu901
- * Date: 5/10/2020
- * Time: 9:55 PM
- */
-?>
 <?php
 /**
  * Created by PhpStorm.
@@ -36,8 +27,8 @@
                         <td><?php echo $category['id']; ?></td>
                     </tr>
                     <tr>
-                        <th>User</th>
-                        <td><?php echo $category['user']; ?></td>
+                        <th>Names</th>
+                        <td><?php echo $category['names']; ?></td>
                     </tr>
                     <tr>
                         <th>Avatar</th>
