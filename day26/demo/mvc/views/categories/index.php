@@ -20,7 +20,7 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>USER</th>
+                <th>NAMES</th>
                 <th>TITLE</th>
                 <th>PICTURE DESCRIPTION</th>
                 <th>DESCRIPTION</th>
@@ -38,7 +38,7 @@
             <?php foreach ($categories AS $category) :?>
                 <tr>
                     <td><?php echo $category['id']?></td>
-                    <td><?php echo $category['user']?></td>
+                    <td><?php echo $category['names']?></td>
                     <td><?php echo $category['title']?></td>
                     <td><img src="assets/upload/<?php echo $category['pic_des']?>" alt="" width="60"></td>
                     <td><?php echo $category['description']?></td>
